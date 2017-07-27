@@ -2,7 +2,7 @@
 
 ## Setup instructions
 
-```
+```shell
 git clone https://github.com/em-cd/worlds-simplest-poker.git
 cd worlds-simplest-poker
 npm install
