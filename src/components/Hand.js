@@ -5,20 +5,26 @@ import Card from './Card.js';
 // number and score, wrapped inside a div with class "hand"
 
 function Hand(props) {
-  function renderCard(i) {
+  const { cards, playerNumber, score } = props;
+
+  function renderCard(card) {
     return (
-      <Card key={props.cards[i].rank + props.cards[i].suit[0]} suit={props.cards[i].suit} rank={props.cards[i].rank} img={props.cards[i].img} />
+      <Card
+        key={card.rank + card.suit[0]}
+        suit={card.suit}
+        rank={card.rank}
+        img={card.img} />
     );
   }
 
   function renderHand(array) {
     let hand = [];
     for (let i = 0; i < array.length; i++) {
-      hand.push(renderCard(i));
+      hand.push(renderCard(cards[i]));
     }
     return (
       <div className="hand">
-        <h2>Player {props.playerNumber} - Score: {props.score}</h2>
+        <h2>Player {playerNumber} - Score: {score}</h2>
         {hand}
       </div>
     );
@@ -26,7 +32,7 @@ function Hand(props) {
 
   return (
     <div className="hand">
-      {renderHand(props.cards)}
+      {renderHand(cards)}
     </div>
   );
 }

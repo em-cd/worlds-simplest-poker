@@ -7,4 +7,14 @@ describe('Card', () => {
     const component = shallow(<Card />);
     expect(component).toMatchSnapshot();
   });
+
+  it('renders correctly with props', () => {
+    const card = {
+      suit: 'Hearts',
+      rank: 'A',
+      img: 'hearts.png'
+    }
+    const component = shallow(<Card props={card} />);
+    expect(component).toMatchSnapshot();
+  });
 });
