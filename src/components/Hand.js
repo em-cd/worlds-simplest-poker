@@ -1,7 +1,8 @@
 import React from 'react';
 import Card from './Card.js';
 
-// takes an array of cards and renders the individual cards, along with player number and score, wrapped inside a div with class "hand"
+// takes an array of cards and renders the individual cards, along with player
+// number and score, wrapped inside a div with class "hand"
 
 function Hand(props) {
   function renderCard(i) {
