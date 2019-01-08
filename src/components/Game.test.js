@@ -13,14 +13,11 @@ describe('Game', () => {
     expect(wrapper.contains(title)).toEqual(true);
   });
 
-  const mockFunction = jest.fn();
-
-  xit('clicking submit calls the function', () => {
-    const wrapper = mount(<Game handleSubmit={mockFunction} />);
-
-    const button = wrapper.find('input#submit');
-    expect(button.length).toBe(1);
-    button.simulate('click');
-    expect(mockFunction).toHaveBeenCalled();
+  it('submitting the form with the default values shows the table', () => {
+    const wrapper = mount(<Game />);
+    const form = wrapper.find('form');
+    form.simulate('submit');
+    const table = wrapper.find('div.table');
+    expect(table.length).toBe(1);
   });
 });
